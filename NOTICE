@@ -1,0 +1,9 @@
+# Third-party notices
+
+This repository contains Nano Origin-original build, launcher, configuration, and branding files under the MIT License.
+
+Firefox ESR is supplied separately as a build input. Firefox source code is licensed under the Mozilla Public License, version 2.0. Mozilla and Firefox are trademarks of the Mozilla Foundation.
+
+uBlock Origin is supplied separately as a signed extension build input and retains its own licensing and notices.
+
+Do not represent a generated Nano Origin package as an official Mozilla or uBlock Origin release.

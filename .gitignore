@@ -1,0 +1,16 @@
+# Generated browser/runtime payloads
+*.exe
+*.zip
+*.sig
+resource.syso
+
+# Local runtime and test outputs
+runtime/
+profile-seed/
+package-stage*/
+artifacts/
+__pycache__/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db

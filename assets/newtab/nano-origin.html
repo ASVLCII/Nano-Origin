@@ -1,0 +1,74 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+<!doctype html>
+<html lang="en" data-nano-origin="true">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; object-src 'none'; base-uri 'none'; script-src resource:; style-src resource:; form-action https://noai.duckduckgo.com/; img-src chrome: resource: data:;"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nano Origin</title>
+    <link rel="icon" type="image/png" href="chrome://branding/content/icon32.png" />
+    <link rel="stylesheet" href="resource://newtab/nano-origin.css" />
+  </head>
+  <body>
+    <div class="stars stars-a" aria-hidden="true"></div>
+    <div class="stars stars-b" aria-hidden="true"></div>
+
+    <main>
+      <header class="brand" aria-label="Nano Origin">
+        <img class="orbit" src="resource://newtab/orbit.png" alt="Orbit logo" />
+        <h1>NANO ORIGIN</h1>
+        <p>Quiet browsing. No AI.</p>
+      </header>
+
+      <form id="search" action="https://noai.duckduckgo.com/" method="get" role="search">
+        <label class="visually-hidden" for="query">Search with DuckDuckGo No AI</label>
+        <div class="search-shell">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <path d="m15.5 15.5 4 4" />
+          </svg>
+          <input
+            id="query"
+            name="q"
+            type="search"
+            inputmode="search"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            placeholder="Search without AI"
+          />
+          <button type="submit">Search</button>
+        </div>
+      </form>
+
+      <p class="commands">
+        <kbd>@noai</kbd> · <kbd>@brave</kbd> · <kbd>@google</kbd> ·
+        <kbd>@onion</kbd> <span>requires Tor</span>
+      </p>
+      <p class="engine-settings">Add more engines in Settings → Search.</p>
+
+      <section id="tor-notice" class="tor-notice" aria-live="polite" hidden>
+        <h2>Tor is required</h2>
+        <p>Nano Origin does not bundle or proxy Tor. Continue only if this browser is already routed through Tor.</p>
+        <div class="tor-actions">
+          <button id="tor-cancel" type="button">Cancel</button>
+          <button id="tor-continue" type="button">Continue to Onion</button>
+        </div>
+      </section>
+    </main>
+
+    <footer aria-label="Privacy status">
+      <span>uBlock Origin</span>
+      <span>No sponsored content</span>
+      <span>Local new tab</span>
+    </footer>
+
+    <script src="resource://newtab/nano-origin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "FixedFileInfo": {
+    "FileVersion": { "Major": 1, "Minor": 0, "Patch": 0, "Build": 1 },
+    "ProductVersion": { "Major": 1, "Minor": 0, "Patch": 0, "Build": 1 },
+    "FileFlagsMask": "3f",
+    "FileFlags": "00",
+    "FileOS": "040004",
+    "FileType": "01",
+    "FileSubType": "00"
+  },
+  "StringFileInfo": {
+    "Comments": "Portable Nano Origin launcher; Firefox ESR 140.14.0 base; uBlock Origin 1.73.0",
+    "CompanyName": "Nano Origin",
+    "FileDescription": "Nano Origin Browser",
+    "FileVersion": "1.0.0.1",
+    "InternalName": "Nano Origin",
+    "LegalCopyright": "Nano Origin local build; Mozilla components under MPL 2.0",
+    "OriginalFilename": "Nano Origin.exe",
+    "ProductName": "Nano Origin",
+    "ProductVersion": "1.0.0.1"
+  },
+  "VarFileInfo": { "Translation": { "LangID": "0409", "CharsetID": "04B0" } },
+  "IconPath": "nano-origin.ico",
+  "ManifestPath": "nano-origin.manifest"
+}
