@@ -14,6 +14,8 @@ $sevenZip = 'C:\Users\admin\AppData\Local\Microsoft\WindowsApps\7z.exe'
 foreach ($required in $Runtime,$ProfileSeed,$sevenZip) {
   if (-not (Test-Path -LiteralPath $required)) { throw "Missing packaging input: $required" }
 }
+$themeScript = Join-Path $PSScriptRoot 'apply-starlight-theme.ps1'
+& $themeScript -ProfileSeed $ProfileSeed | Out-Null
 if (-not $stage.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) { throw 'Unsafe staging path.' }
 if (Test-Path -LiteralPath $stage) { Remove-Item -LiteralPath $stage -Recurse -Force }
 New-Item -ItemType Directory -Path (Join-Path $stage 'runtime'),(Join-Path $stage 'profile-seed') -Force | Out-Null
@@ -35,7 +37,7 @@ try {
 } finally { Pop-Location }
 
 $listing = (& $sevenZip l $Payload) -join "`n"
-foreach ($needle in 'runtime\nano-origin-browser.exe','runtime\browser\omni.ja','runtime\distribution\policies.json','runtime\distribution\extensions\uBlock0@raymondhill.net.xpi','profile-seed\nano-origin.ico') {
+foreach ($needle in 'runtime\nano-origin-browser.exe','runtime\browser\omni.ja','runtime\distribution\policies.json','runtime\distribution\extensions\uBlock0@raymondhill.net.xpi','profile-seed\nano-origin.ico','profile-seed\chrome\userChrome.css','profile-seed\chrome\userContent.css','profile-seed\chrome\starlight-v2.png','profile-seed\chrome\tab-sparkle.png','profile-seed\chrome\orbit-matte.png') {
   if ($listing -notmatch [regex]::Escape($needle)) { throw "Payload missing: $needle" }
 }
 

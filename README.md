@@ -7,7 +7,7 @@ This is a community project: it exists to give people a transparent, hackable st
 ## What it aims to do
 
 - Start from Firefox ESR for a maintained browser engine.
-- Keep the interface flat and compact.
+- Use a dark Starlight interface with the Orbit mark, a sparse star ceiling on new tabs, and a compact search field. Horizontal tabs remain the default.
 - Bundle uBlock Origin and use strict third-party script/frame blocking by default.
 - Use DuckDuckGo No AI by default, while retaining Brave, Google, onion, and user-added search choices.
 - Disable optional consumer features by default without deleting their components; users can restore them through Firefox Settings, site permissions, or `about:config` where Firefox exposes no normal setting.
@@ -16,6 +16,14 @@ This is a community project: it exists to give people a transparent, hackable st
 ## Building
 
 The Windows launcher is Go code in `cmd/launcher`. The PowerShell scripts in `scripts/` prepare a Firefox ESR runtime, package a payload, and append it to the native launcher. A Firefox ESR runtime and the signed uBlock Origin XPI are deliberate external build inputs and are not committed here.
+
+The Starlight theme lives in `assets/theme`. `scripts/package-r1-search.ps1` applies it to the profile seed before packaging. To apply it to another build profile seed directly:
+
+```powershell
+pwsh -File scripts/apply-starlight-theme.ps1 -ProfileSeed 'X:\NanoOriginBuild\payload\profile-seed'
+```
+
+The script installs `userChrome.css`, `userContent.css`, and their image assets. It enables Firefox's profile stylesheet support, uses the built-in dark theme, and opens `about:home` on startup. It does not enable the optional vertical tab sidebar. Run it against a build profile seed; the repository does not contain a Firefox runtime or a ready-to-install browser.
 
 Run the launcher tests with:
 

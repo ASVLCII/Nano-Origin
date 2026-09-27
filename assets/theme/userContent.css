@@ -1,0 +1,132 @@
+/* Nano Origin Starlight theme for about:home and about:newtab. */
+@-moz-document url("about:home"), url("about:newtab") {
+  :root {
+    color-scheme: dark !important;
+    --newtab-background-color: #030405 !important;
+    --newtab-background-color-secondary: #151719 !important;
+    --newtab-text-primary-color: #f4f4f3 !important;
+    --newtab-text-secondary-color: #c7c9c9 !important;
+    --newtab-wordmark-color: #f4f4f3 !important;
+    --newtab-primary-action-background: #d2aa68 !important;
+  }
+
+  html,
+  body,
+  body.activity-stream {
+    min-height: 100vh !important;
+    background-color: #030405 !important;
+    background-image: url("starlight-v2.png") !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    color: #f4f4f3 !important;
+  }
+
+  #root,
+  .outer-wrapper {
+    background: transparent !important;
+  }
+
+  .outer-wrapper.only-search {
+    padding-top: clamp(165px, 24vh, 275px) !important;
+  }
+
+  .search-wrapper {
+    width: min(100%, 840px) !important;
+    max-width: calc(100vw - 64px) !important;
+    margin-inline: auto !important;
+  }
+
+  .search-wrapper .logo-and-wordmark {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-block-end: 42px !important;
+  }
+
+  .search-wrapper .logo-and-wordmark .logo {
+    display: inline-block !important;
+    width: 96px !important;
+    height: 96px !important;
+    background: url("orbit-matte.png") center / contain no-repeat !important;
+    filter: none !important;
+  }
+
+  .search-wrapper .logo-and-wordmark .wordmark {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 96px !important;
+    margin-inline-start: 24px !important;
+    background: none !important;
+    filter: none !important;
+  }
+
+  .search-wrapper .logo-and-wordmark .wordmark::after {
+    content: "NANO ORIGIN";
+    color: #f8f8f7;
+    font: 650 clamp(31px, 3.4vw, 49px) / 1.1 "Segoe UI Variable", "Segoe UI", sans-serif;
+    letter-spacing: .145em;
+    white-space: nowrap;
+  }
+
+  .search-wrapper .search-inner-wrapper {
+    width: 100% !important;
+    max-width: 840px !important;
+    min-height: 54px !important;
+    margin-inline: auto !important;
+  }
+
+  .search-wrapper .search-handoff-button,
+  .search-wrapper input {
+    min-height: 54px !important;
+    background-color: rgb(20 22 24 / 94%) !important;
+    border: 1px solid #505258 !important;
+    border-radius: 28px !important;
+    box-shadow: 0 8px 18px rgb(0 0 0 / 18%) !important;
+    color: #f4f4f3 !important;
+    font-size: 16px !important;
+  }
+
+  .search-wrapper .search-handoff-button:hover,
+  .search-wrapper .search-handoff-button:focus-visible,
+  .search-wrapper input:focus {
+    border-color: #d2aa68 !important;
+    outline: 2px solid rgb(210 170 104 / 35%) !important;
+    outline-offset: 2px !important;
+  }
+
+  .search-wrapper .search-handoff-button .fake-text,
+  .search-wrapper input::placeholder {
+    color: #c6c8c8 !important;
+    opacity: 1 !important;
+  }
+
+  .search-wrapper .search-button {
+    height: 54px !important;
+    fill: #d2aa68 !important;
+  }
+
+  @media (max-width: 700px) {
+    .outer-wrapper.only-search {
+      padding-top: 18vh !important;
+    }
+
+    .search-wrapper .logo-and-wordmark .logo {
+      width: 66px !important;
+      height: 66px !important;
+    }
+
+    .search-wrapper .logo-and-wordmark .wordmark {
+      height: 66px !important;
+      margin-inline-start: 14px !important;
+    }
+
+    .search-wrapper .logo-and-wordmark .wordmark::after {
+      font-size: clamp(21px, 5vw, 32px) !important;
+      letter-spacing: .08em !important;
+    }
+  }
+}

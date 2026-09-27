@@ -1,0 +1,90 @@
+/* Nano Origin Starlight theme for Firefox ESR 140 browser chrome. */
+:root {
+  color-scheme: dark !important;
+  --lwt-accent-color: #0b0c0e !important;
+  --lwt-text-color: #f4f4f3 !important;
+  --toolbar-bgcolor: #111214 !important;
+  --toolbar-color: #f4f4f3 !important;
+  --toolbar-field-background-color: #151618 !important;
+  --toolbar-field-color: #f4f4f3 !important;
+  --toolbar-field-border-color: #46484c !important;
+  --toolbar-field-focus-background-color: #17191b !important;
+  --toolbar-field-focus-color: #fff !important;
+  --lwt-selected-tab-background-color: #191b1d !important;
+  --toolbarbutton-border-radius: 6px !important;
+  --tab-border-radius: 8px !important;
+}
+
+#navigator-toolbox,
+#titlebar,
+#TabsToolbar {
+  background: #0b0c0e !important;
+  color: #f4f4f3 !important;
+}
+
+/* Two restrained glints in the horizontal tab strip. */
+#TabsToolbar {
+  background-image: url("tab-sparkle.png") !important;
+  background-size: 52px 52px !important;
+  background-position: 45.3% -14px !important;
+  background-repeat: no-repeat !important;
+}
+
+.tabbrowser-tab[selected] .tab-content {
+  position: relative !important;
+}
+
+.tabbrowser-tab[selected] .tab-content::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 48px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: url("tab-sparkle.png") center / 52px 52px no-repeat;
+  opacity: .8;
+  pointer-events: none;
+}
+
+#navigator-toolbox {
+  border-bottom: 1px solid #2c2e32 !important;
+  box-shadow: none !important;
+}
+
+#nav-bar {
+  background: #111214 !important;
+  color: #f4f4f3 !important;
+  padding-block: 4px !important;
+  box-shadow: none !important;
+}
+
+#urlbar-container {
+  padding-block: 2px !important;
+}
+
+#urlbar-background {
+  background: #151618 !important;
+  border: 1px solid #45484c !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+#urlbar[focused="true"] #urlbar-background,
+#urlbar[open] #urlbar-background {
+  border-color: #d2aa68 !important;
+  outline: 1px solid rgb(210 170 104 / 30%) !important;
+}
+
+.tabbrowser-tab {
+  min-height: 34px !important;
+}
+
+.tabbrowser-tab .tab-background {
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+  background: #191b1d !important;
+  border-color: #313338 !important;
+}

@@ -10,6 +10,9 @@ profile-seed/
 package-stage*/
 artifacts/
 __pycache__/
+theme-backup-*/
+assets/theme/starlight.png
+assets/theme/orbit-matte.png
 
 # Editor and OS files
 .DS_Store
