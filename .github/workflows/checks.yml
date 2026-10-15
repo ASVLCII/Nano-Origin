@@ -1,0 +1,28 @@
+name: Source checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: cmd/launcher/go.mod
+          cache: false
+      - name: Test launcher
+        working-directory: cmd/launcher
+        run: go test ./...
+      - name: Vet launcher
+        working-directory: cmd/launcher
+        run: go vet ./...
+      - name: Check PowerShell syntax
+        shell: pwsh
+        run: ./scripts/check-powershell-syntax.ps1

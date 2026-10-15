@@ -32,6 +32,17 @@ cd cmd/launcher
 go test ./...
 ```
 
+GitHub Actions runs launcher tests, `go vet`, and PowerShell syntax checks on
+Windows for pushes and pull requests. These checks use source files only; they
+do not download or package Firefox or uBlock Origin. Run the same syntax check
+locally from the repository root:
+
+```powershell
+pwsh -File scripts/check-powershell-syntax.ps1
+```
+
+The syntax check parses scripts without executing their packaging operations.
+
 ## Licensing
 
 The Nano Origin-original files in this repository are MIT licensed; see [LICENSE](LICENSE).
